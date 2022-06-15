@@ -5,11 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
   </head>
-  <body>
-    <form action="/password">
-      <label for="length">Select the length of your password:</label>
-      <select name="length" id="length">
+  <body class="bg-dark">
+    <form action="/password" class="card mx-auto position-absolute top-50 start-50 translate-middle p-2 d-grid gap-3" style="width: 20rem;">
+      <label for="length"><h5>Select the length of your password:</h5></label>
+      <select name="length" class="form-select" id="length">
         <option value="6">6 Characters</option>
         <option value="7">7 Characters</option>
         <option value="8">8 Characters</option>
@@ -21,16 +32,22 @@
         <option value="14">14 Characters</option>
       </select>
 
-      <label for="uppercase">Uppercase</label>
-      <input type="checkbox" name="uppercase" id="uppercase">
+      <div class="form-check form-switch">
+        <label class="form-check-label" for="uppercase">Uppercase</label>
+        <input class="form-check-input bg-dark" type="checkbox" role="switch" name="uppercase" id="uppercase">
+      </div>
 
-      <label for="numbers">Numbers</label>
-      <input type="checkbox" name="numbers" id="numbers">
+      <div class="form-check form-switch">
+        <label class="form-check-label" for="numbers">Numbers</label>
+        <input class="form-check-input bg-dark" type="checkbox" role="switch" name="numbers" id="numbers">
+      </div>
 
-      <label for="special">Special characters</label>
-      <input type="checkbox" name="special" id="special">
+      <div class="form-check form-switch">
+        <label class="form-check-label" for="special">Special</label>
+        <input class="form-check-input bg-dark" type="checkbox" role="switch" name="special" id="special">
+      </div>
 
-      <button>generate password</button>
+      <button class="btn btn-dark">generate password</button>
     </form>
   </body>
 </html>
