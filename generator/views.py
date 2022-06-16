@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import string
 import random
+import requests
 
 # Create your views here.
 def home(request):
@@ -25,9 +26,20 @@ def password(request):
 
     passwordString = [str(random.choice(characters)) for _ in range(lenght)]
 
-    # for _ in range(lenght):
-    #     passwordString += random.choice(characters)
-
     print(characters)
 
     return render(request, 'pages/password.html', { 'password': ''.join(passwordString) })
+
+def pokedex(request):
+    pokemonId = request.GET.get('pokemon')
+    endpoint = f'https://pokeapi.co/api/v2/pokemon/{pokemonId}'
+    res = requests.get(endpoint)
+    pokemon = res.json()
+    images = pokemon['sprites']
+    
+    print(images)
+
+    return render(request, 'pages/pokedex.html', { pokemon: 'a' })
+
+def pokemon(request):
+    return render(request, 'pages/pokemon.html')

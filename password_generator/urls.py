@@ -15,9 +15,11 @@ Including another URLconf
 """
 #from django.contrib import admin
 from django.urls import path
-from generator.views import home, password
+from generator.views import home, password, pokedex, pokemon
 
 urlpatterns = [
     path('', home, name='home'),
     path('password', password, name='password'),
+    path('pokemon', pokemon),
+    path('pokedex', pokedex, name='pokedex'),
 ]
