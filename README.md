@@ -1,3 +1,3 @@
 ```sh
-python -m pip install .
+python -m pip install django
 ```
