@@ -1,53 +1,30 @@
 {% extends 'components/layout.html' %}
 
 {% block content %}
-<form
-  action="/password"
-  class="card mx-auto position-absolute top-50 start-50 translate-middle p-2 d-grid gap-3"
-  style="width: 20rem"
->
-  <label for="length"><h5>Select the length of your password:</h5></label>
-  <select name="length" class="form-select" id="length">
-    <option value="6">6 Characters</option>
-    <option value="7">7 Characters</option>
-    <option value="8">8 Characters</option>
-    <option value="9">9 Characters</option>
-    <option value="10">10 Characters</option>
-    <option value="11">11 Characters</option>
-    <option value="12">12 Characters</option>
-    <option value="13">13 Characters</option>
-    <option value="14">14 Characters</option>
-  </select>
-  <div class="form-check form-switch">
-    <label class="form-check-label" for="uppercase">Uppercase</label>
-    <input
-      class="form-check-input bg-dark"
-      type="checkbox"
-      role="switch"
-      name="uppercase"
-      id="uppercase"
-    />
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://blog.kuula.co/assets/protected-tours/header.jpg" class="d-block w-100" alt="protect your password" style="height: 550px;">
+    </div>
+    <div class="carousel-item">
+      <img src="https://www.groovypost.com/wp-content/uploads/2021/05/passwords-security-featured.jpg" class="d-block w-100" alt="protect your password" style="height: 550px;">
+    </div>
+    <div class="carousel-item">
+      <img src="https://www.cyclonis.com/images/2018/07/cyber-security-3400657_1920-765x459.jpg" class="d-block w-100" alt="protect your password" style="height: 550px;">
+    </div>
   </div>
-  <div class="form-check form-switch">
-    <label class="form-check-label" for="numbers">Numbers</label>
-    <input
-      class="form-check-input bg-dark"
-      type="checkbox"
-      role="switch"
-      name="numbers"
-      id="numbers"
-    />
-  </div>
-  <div class="form-check form-switch">
-    <label class="form-check-label" for="special">Special</label>
-    <input
-      class="form-check-input bg-dark"
-      type="checkbox"
-      role="switch"
-      name="special"
-      id="special"
-    />
-  </div>
-  <button class="btn btn-dark">generate password</button>
-</form>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+
+  <a href="/getpassword">
+    <h1 class="text-white" style="text-align: center;margin-top: 100px;">Generate your super secret password</h1>
+  </a>
+
+</div>
 {% endblock %}
